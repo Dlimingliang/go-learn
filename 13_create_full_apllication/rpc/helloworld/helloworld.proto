@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package helloworld;
+
+option go_package = "github.com/Dlimingliang/go-learn/13_create_full_apllication/rpc/helloworld";
+
+message HelloRequest {
+  string name = 1; // 名称
+  int32 age = 2; //年龄
+  repeated string courses = 3; //语言
+}

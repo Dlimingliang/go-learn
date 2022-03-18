@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "/13_create_full_apllication/stream_grpc/stream";
+
+service Greetere{
+  rpc GetStream (StreamReq) returns (stream StreamRes);
+  rpc PutStream (stream StreamReq) returns (StreamRes);
+  rpc AllStream (stream StreamReq) returns (stream StreamRes);
+}
+
+message StreamReq {
+  string data = 1;
+}
+
+message StreamRes {
+  string data = 1;
+}

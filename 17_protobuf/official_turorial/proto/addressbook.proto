@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/timestamp.proto";
+option go_package = "./";
+
+enum MobileType{
+  MOBILE = 0;
+  HOME = 1;
+  WORK = 2;
+}
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+  message PhoneNumber {
+    string number = 1;
+    MobileType mobileType = 2;
+  }
+  repeated PhoneNumber phoneNumbers = 4;
+  google.protobuf.Timestamp lastUpdate = 5;
+}
+
+message AddressBook {
+  repeated Person person = 1;
+}
+

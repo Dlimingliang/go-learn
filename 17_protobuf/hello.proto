@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "base.proto";
+option go_package = "/proto";
+
+service HelloServer {
+  rpc SayHello (HelloReq) returns (HelloRes);
+  rpc SayHelloAgain (google.protobuf.Empty) returns (Pong);
+}
+
+enum Gender {
+  MALE = 0;
+  FMALE = 1;
+}
+
+message HelloReq {
+  string name = 1;
+  Gender g = 2;
+}
+
+message HelloRes {
+  string message = 1;
+  message Result {
+    string name = 1;
+  }
+}
