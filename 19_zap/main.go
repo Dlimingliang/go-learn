@@ -17,6 +17,7 @@ func InitZapConfig() {
 func main() {
 
 	logger, _ := zap.NewProduction()
+	//logger := zap.NewExample()
 	//logger, _ := zap.NewDevelopment()
 	defer logger.Sync() // flushes buffer, if any
 	url := "htts://github.com"
@@ -28,6 +29,4 @@ func main() {
 		"backoff", time.Second,
 	)
 	sugar.Infof("Failed to fetch URL: %s", url)
-
-	logger.Info("Failed to fetch URL", zap.String("url", url), zap.Int("attempt", 3))
 }
