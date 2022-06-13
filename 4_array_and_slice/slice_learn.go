@@ -56,6 +56,23 @@ func main() {
 	sl3 = append(sl3, 4, 5, 6)
 	sl3 = append(sl3, slFrom...)
 	fmt.Println(sl3)
+
+	slice := make([]int, 0, 5)
+	slicePoint := &slice
+	fmt.Println("当前长度: ", len(*slicePoint))
+	fmt.Println("当前容量: ", cap(slice))
+	slice = append(slice, 1)
+	slice = append(slice, 2)
+	fmt.Println("当前长度: ", len(*slicePoint))
+	fmt.Println("当前容量: ", cap(slice))
+	fmt.Println("index0的值: ", slice[0])
+	//删除元素并且保留容量
+	slice = append(slice[:0], slice[1:]...)
+	fmt.Println("当前长度: ", len(*slicePoint))
+	fmt.Println("当前容量: ", cap(slice))
+	slice = slice[1:]
+	fmt.Println("当前长度: ", len(*slicePoint))
+	fmt.Println("当前容量: ", cap(slice))
 }
 
 func sum(a []int) int {
