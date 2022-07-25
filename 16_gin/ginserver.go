@@ -192,6 +192,15 @@ func goodsDetail(context *gin.Context) {
 }
 
 func Pong(context *gin.Context) {
+	go func() {
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Printf("error: %v\n", err)
+			}
+		}()
+		var point *LoginForm
+		fmt.Println(point.Username)
+	}()
 	context.JSON(http.StatusOK, gin.H{
 		"message": "pong",
 	})
