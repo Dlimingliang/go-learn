@@ -4,11 +4,13 @@ go 1.17
 
 require (
 	github.com/anaskhan96/go-password-encoder v0.0.0-20201010210601-c765b799fd72
+	github.com/fsnotify/fsnotify v1.5.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
 	github.com/go-playground/validator/v10 v10.10.0
 	github.com/golang/protobuf v1.5.2
+	github.com/robfig/cron v1.2.0
 	github.com/spf13/viper v1.10.1
 	go.uber.org/zap v1.21.0
 	google.golang.org/grpc v1.44.0
@@ -19,7 +21,6 @@ require (
 )
 
 require (
-	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
