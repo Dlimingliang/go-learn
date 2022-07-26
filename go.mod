@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.0
 	github.com/go-playground/validator/v10 v10.10.0
 	github.com/golang/protobuf v1.5.2
-	github.com/robfig/cron v1.2.0
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/spf13/viper v1.10.1
 	go.uber.org/zap v1.21.0
 	google.golang.org/grpc v1.44.0

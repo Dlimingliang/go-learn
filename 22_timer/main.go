@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/robfig/cron"
+	"github.com/robfig/cron/v3"
 	"time"
 )
 
@@ -12,9 +12,8 @@ type Test struct {
 
 func main() {
 	c := cron.New()
-	_ = c.AddFunc("*/1 * * * * ?", func() {
-		var point *Test
-		fmt.Println(point.Name)
+	_, _ = c.AddFunc("* */10 * * *", func() {
+		fmt.Println(time.Now().Unix())
 	})
 	c.Start()
 
